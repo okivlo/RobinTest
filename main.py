@@ -6,7 +6,7 @@ import numpy as np
 def main():
 
     # This is just a test dataframe from my own project
-    df = pd.read_csv('numerical_cat3')
+    df = pd.read_csv('wine.csv')
 
     # Adding a column with missing values
     df['null_column'] = np.NaN
@@ -18,7 +18,7 @@ def main():
 
     dq = data_quality.DataQuality(df)
     results = dq.evaluate()
-    print(df)
+
 
 if __name__ == '__main__':
     main()
