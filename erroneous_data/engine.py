@@ -130,7 +130,7 @@ with a minimun length of {th:.0f} among the columns {set(flatlines.keys())}."))
         df = self.df.copy()  # Index will not be covered in column iteration
         df[self.__default_index_name] = df.index  # Index now in columns to be processed
         check_cols = set(df.columns).difference(set(skip))
-        df = df[check_cols]
+        df = df[list(check_cols)]
         eds = DataFrame(index=self._edv, columns=check_cols)
 
         def check_ed(edv: str):
